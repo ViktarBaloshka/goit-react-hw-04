@@ -24,18 +24,9 @@ const customStyles = {
 
 export default function ImageModal({ image, isOpen, onClose }) {
   Modal.setAppElement("#root");
-  const handleClose = (e) => {
-    if (e.target === e.currentTarget) {
-      onClose();
-    }
-  };
+
   return (
-    <Modal
-      style={customStyles}
-      isOpen={isOpen}
-      onRequestClose={onClose}
-      onClick={handleClose}
-    >
+    <Modal style={customStyles} isOpen={isOpen} onRequestClose={onClose}>
       <div>{<img src={image} />}</div>
     </Modal>
   );
